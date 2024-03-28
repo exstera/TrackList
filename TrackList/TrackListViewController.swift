@@ -8,6 +8,8 @@
 import UIKit
 
 class TrackListViewController: UITableViewController {
+    
+    var trackList = Track.getTrackList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -16,13 +18,15 @@ class TrackListViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return trackList.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
 
-        // Configure the cell...
+        let track = trackList[0]
+        cell.textLabel?.text = track.song
+        cell.detailTextLabel?.text = track.artist
 
         return cell
     }
