@@ -17,8 +17,8 @@ struct Track {
 extension Track {
     static func getTrackList() -> [Track] {
         return [ Track(artist: "Alberto Ruiz", song: "7 Elements (Original Mix)"),
-                 Track(artist: "Dave Wincent", song: "Red Eye (original Mix)"),
-                 Track(artist: "E-Sprectro", song: "End Station (Original Mix)"),
+                 Track(artist: "Dave Wincent", song: "Red Eye (Original Mix)"),
+                 Track(artist: "E-Spectro", song: "End Station (Original Mix)"),
                  Track(artist: "Edna Ann", song: "Phasma (Konstantin Yoodza Remix)"),
                  Track(artist: "Ilija Djokovic", song: "Delusion (Original Mix)"),
                  Track(artist: "John Baptiste", song: "Mycelium (Original Mix)"),
