@@ -9,10 +9,17 @@ import UIKit
 
 class TrackDetailsViewController: UIViewController {
 
+    @IBOutlet weak var artCoverImageView: UIImageView!
+    @IBOutlet weak var trackLabel: UILabel!
+    
+    var track: Track!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        artCoverImageView.image = UIImage(named: track.track)
+        trackLabel.text = track.track
     }
     
 

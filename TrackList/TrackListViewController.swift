@@ -13,6 +13,13 @@ class TrackListViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let viewController = segue.destination as! TrackDetailsViewController
+        guard let indexPath = tableView.indexPathForSelectedRow else { return }
+        viewController.track = trackList[indexPath.row]
     }
 
     // MARK: - Table view data source
@@ -34,5 +41,9 @@ class TrackListViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }
